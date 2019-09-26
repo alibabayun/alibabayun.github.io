@@ -1,0 +1,36 @@
+---
+layout: null
+title : sitemap
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>站点地图 - {{ site.title }}<</title>
+
+<meta name="keywords" content="站点地图,{{ site.title }}<" />
+<meta name="generator" content="Baidu SiteMap Generator" />
+<meta name="author" content="alibabayun.Name" />
+<meta name="copyright" content="alibabayun.Name" />
+<style type="text/css">
+	body {font-family: Verdana;FONT-SIZE: 12px;MARGIN: 0;color: #000000;background: #ffffff;}
+	img {border:0;}
+	li {margin-top: 8px;}
+	.page {padding: 4px; border-top: 1px #EEEEEE solid}
+	.author {background-color:#EEEEFF; padding: 6px; border-top: 1px #ddddee solid}
+	#nav, #content, #footer {padding: 8px; border: 1px solid #EEEEEE; clear: both; width: 95%; margin: auto; margin-top: 10px;}
+</style>
+</head>
+<body vlink="#333333" link="#333333">
+<h2 style="text-align: center; margin-top: 20px">{{ site.title }}</h2>
+<center></center>
+<div id="nav"><a href="{{ site.production_url }}"><strong>{{ site.title }}</strong></a>  &raquo; <a href="{{ site.production_url }}/sitemap.html">站点地图</a></div>
+<div id="content">
+<h3>最新文章</h3>
+
+<ul>
+{% for post in site.posts %}
+	<li><a href="{{ site.production_url }}{{ post.url }}" title="{{ post.title }}" target="_blank">{{ post.title }}	</a></li>
+{% endfor %}
+</ul>
