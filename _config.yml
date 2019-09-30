@@ -31,7 +31,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : /
+production_url : //alibabayun.github.io
 # cdn_url : http://wx78585.u.qiniudn.com
 # cdn_url : http://wx78585-github-blog.b0.upaiyun.com
 # cdn_url : //alibabayun.github.io
