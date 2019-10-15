@@ -8,6 +8,11 @@ tags: ["linux"]
 ---
 有时为了方便在线上快速自动部署可参考以下脚本配置
 
+## 效果为
+- 添加目录`/data/www/project`
+- 添加目录`/data/git/project`
+- 添加更新脚本`/opt/bin/git_update_project.sh`
+
 ## 脚本 
 执行 `vim auto_add_project.sh` and `chmod +x auto_add_project.sh`
 
@@ -45,8 +50,3 @@ else
     echo "没设置项目名称参数"
 fi
 ```
-
-## 效果为
-- 添加目录`/data/www/project`
-- 添加目录`/data/git/project`
-- 添加更新脚本`/opt/bin/git_update_project.sh`
