@@ -45,6 +45,6 @@ fi
 ```
 
 ## 效果为
--添加目录`/data/www/project`
--添加目录`/data/git/project`
--添加更新脚本`/opt/bin/git_update_project.sh`
+- 添加目录`/data/www/project`
+- 添加目录`/data/git/project`
+- 添加更新脚本`/opt/bin/git_update_project.sh`
