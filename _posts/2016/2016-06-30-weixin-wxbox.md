@@ -8,8 +8,6 @@ tags: ["wxbot", "python"]
 ---
 {% include JB/setup %}
 
-效果图
-![效果图](https://img.alicdn.com/imgextra/i3/1819728314/TB2RvWssXXXXXXtXpXXXXXXXXXX_!!1819728314.png)
 
 #### 参考资料一：
 [wxBot 是用Python包装Web微信协议实现的微信机器人框架](https://github.com/liuwons/wxBot)
