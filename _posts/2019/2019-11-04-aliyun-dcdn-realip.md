@@ -24,4 +24,5 @@ tags: ["nginx"]
 ### 参考文章
 [https://mp.weixin.qq.com/s/DLA05NJkTRp6DbZJDACJtg](https://mp.weixin.qq.com/s/DLA05NJkTRp6DbZJDACJtg)
 
+[https://www.xuliangwei.com/bgx/1366.html](https://www.xuliangwei.com/bgx/1366.html)
 
