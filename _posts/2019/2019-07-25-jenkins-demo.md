@@ -28,3 +28,6 @@ Publish Over SSH #多台远程服务器推送
 ![单台示例](http://img.alibabayun.github.io/2019/07/page1.png)
 * 多台示例
 ![多台示例](http://img.alibabayun.github.io/2019/07/page2.png)
+
+## Jenkins安装插件提速
+![https://www.cnblogs.com/hellxz/p/jenkins_install_plugins_faster.html](https://www.cnblogs.com/hellxz/p/jenkins_install_plugins_faster.html)

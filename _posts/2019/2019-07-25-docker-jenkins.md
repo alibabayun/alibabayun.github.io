@@ -9,7 +9,7 @@ tags: ["Jenkins"]
 
 #### 执行以下快速安装
 ```
-docker run -d -p 8080:8080 -p 50000:50000 -v jenkins:/var/jenkins_home -v /etc/localtime:/etc/localtime --name jenkins docker.io/jenkins/jenkins
+docker run -d -e TZ="Asia/Shanghai" -e JAVA_OPTS=-Duser.timezone=Asia/Shanghai -p 8080:8080 -p 50000:50000 -v jenkins:/var/jenkins_home --name jenkins docker.io/jenkins/jenkins 
 ```
 
 #### 安装完成后查看初始密码

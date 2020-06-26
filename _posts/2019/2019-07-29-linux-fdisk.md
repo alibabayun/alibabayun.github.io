@@ -12,3 +12,6 @@ tags: ["linux"]
 
 ### 参考资料
 [https://www.cnblogs.com/zishengY/p/7137671.html](https://www.cnblogs.com/zishengY/p/7137671.html)
+
+### 更改docker image 存放位置
+https://jingyan.baidu.com/article/363872ec39403c6e4ba16f26.html
