@@ -6,6 +6,15 @@ description: "Https(LetsEncrypt) 在iPhone上慢的问题"
 category: "frps"
 tags: ["frps"]
 ---
+#### 目前方案
+```
+		# ios https加速
+		ssl_stapling on;
+		ssl_stapling_verify on;
+		resolver 8.8.8.8 8.8.4.4 1.1.1.1 valid=60s;
+		resolver_timeout 2s;
+```
+
 参考资源：
 - https://www.jianshu.com/p/2fb12a80c33f
 - https://www.cnblogs.com/duanweishi/p/13321672.html
