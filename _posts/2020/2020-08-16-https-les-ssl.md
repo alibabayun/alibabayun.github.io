@@ -20,12 +20,12 @@ tags: ["frps"]
 - https://www.cnblogs.com/duanweishi/p/13321672.html
 - https://www.jianlove.com/ocsp-stapling-092.html
 
-## 原因
+#### 原因
 域名ocsp.int-x3.letsencrypt.org在国内有DNS污染, 导致浏览器过长时间卡在OCSP检查上, 而不同浏览器对待OSCP机制的处理是不一样的, 比如在IE下最多连接2S, 超时则不处理, 在Chrome中可能都不会处理它, 这便导致了在不同浏览器下打开速度有差异.
 
 关于OSCP是什么, 可以查看这篇文章你不在意的HTTPS证书吊销机制.
 
-## 解决方案
+#### 解决方案
 开启 nginx 的 ssl_stapling
 
 ```
