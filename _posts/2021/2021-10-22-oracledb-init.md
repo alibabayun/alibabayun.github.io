@@ -17,6 +17,9 @@ exp 		用户名/密码@ip:port/instance_name file=导出路径 full=y
 linux:  su - oracle
 例子：   exp  root/123456@127.0.0.1:1521/orcl file=/tmp/dc.dmp log=/tmp/dump.log    
 doller符
+
+window
+exp  username/password@xx.xx.xx.xx:1521/orcl file=D:\bak\hw_monster.dmp
 ````
 
 2.  导入数据库备份
@@ -70,3 +73,4 @@ show parameter dump_dest;
 
 ### control01.ctl 文件不见了
 https://www.cnblogs.com/djlsunshine/p/14516621.html
+
