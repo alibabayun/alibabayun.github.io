@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "oracle数据库常用"
-keywords: ["composer"]
-description: "oracle数据库常用"
-category: "oracle"
-tags: ["oracle"]
+title: "linux kmv病毒"
+keywords: ["linux"]
+description: "linux "
+category: "linux"
+tags: ["linux"]
 ---
 
 ## 前言

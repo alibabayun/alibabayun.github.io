@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "oracle数据库常用"
-keywords: ["composer"]
+keywords: ["oracle"]
 description: "oracle数据库常用"
 category: "oracle"
 tags: ["oracle"]
