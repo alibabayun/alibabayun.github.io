@@ -82,7 +82,7 @@ startup
 show parameter dump_dest;
 ```
 
-##常见问题
+## 常见问题
 * control01.ctl 文件不见了
 参考资料 https://www.cnblogs.com/djlsunshine/p/14516621.html
 
