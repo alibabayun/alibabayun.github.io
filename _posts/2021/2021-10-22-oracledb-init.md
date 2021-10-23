@@ -1,3 +1,11 @@
+---
+layout: post
+title: "oracle数据库常用"
+keywords: ["composer"]
+description: "oracle数据库常用"
+category: "oracle"
+tags: ["oracle"]
+---
 
 ## 参考资料：
 - https://www.cnblogs.com/mmzs/p/11210625.html
