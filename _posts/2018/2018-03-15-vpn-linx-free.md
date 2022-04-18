@@ -14,6 +14,10 @@ tags: ["vpn"]
 原文链接：[https://mp.weixin.qq.com/s/Gi5svzqJtnaZCyLwg86j7A](https://mp.weixin.qq.com/s/Gi5svzqJtnaZCyLwg86j7A)
 参考2链接:[https://www.vultrblog.com/ssr.html](https://www.vultrblog.com/ssr.html)
 
+https://github.com/bluekk935/ToyoDAdoubi
+系统支持: CentOS6+ / Debian6+ / Ubuntu14+
+
+
 备用链接
 ```
 yum -y install wget

@@ -18,5 +18,11 @@ ps -aux | grep 26490
 $ cat /proc/14338/cgroup
 ````
 
+查看是哪个镜像的
+```
+1:name=systemd:/docker/8adb7fd451638787
+docker ps | grep mysql | grep
+```
+
 ### 参考资料
 https://cloud.tencent.com/developer/article/1664123
