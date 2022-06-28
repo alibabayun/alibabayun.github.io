@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "PHP 怎么获取 Closure闭包函数的static、this和parameter属性值"
+title: "PHP怎么获取Closure闭包函数的static、this和parameter属性值"
 keywords: ["php"]
-description: "PHP 怎么获取闭包函数的static、this和parameter属性值"
+description: "PHP怎么获取闭包函数的static、this和parameter属性值"
 category: "php"
 tags: ["php"]
 ---
+
 ## 背景
 最近使用tp5时，用到一个 list($where, $sort, $order, $offset, $limit) = $this->buildparams(); 将参数转成条件的闭包函数， 需要将里面的where条件取出来.
 
