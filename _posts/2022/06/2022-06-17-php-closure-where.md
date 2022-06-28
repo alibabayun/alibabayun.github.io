@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "PHP怎么获取Closure闭包函数的static、this和parameter属性值"
+title: "PHP怎么获取Closure闭包属性值"
 keywords: ["php"]
-description: "PHP怎么获取闭包函数的static、this和parameter属性值"
+description: "PHP怎么获取闭包属性值"
 category: "php"
 tags: ["php"]
 ---
