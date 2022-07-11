@@ -8,7 +8,10 @@ tags: ["php"]
 ---
 
 ## 背景
-最近使用tp5时，用到一个 list($where, $sort, $order, $offset, $limit) = $this->buildparams(); 将参数转成条件的闭包函数， 需要将里面的where条件取出来.
+最近使用tp5时，用到一个 将参数转成条件的闭包函数， 需要将里面的where条件取出来.
+```
+list($where, $sort, $order, $offset, $limit) = $this->buildparams(); 
+```
 
 ## 解决方案
 参考资料：https://blog.csdn.net/qq_23586923/article/details/117807033

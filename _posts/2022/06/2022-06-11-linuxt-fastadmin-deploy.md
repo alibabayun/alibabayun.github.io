@@ -27,3 +27,7 @@ location / {
 
 ## 参考资料
 [https://segmentfault.com/q/1010000021925455/a-1020000022773394](https://segmentfault.com/q/1010000021925455/a-1020000022773394)
+
+
+## window下如安装宝塔，后台报404
+参考 [win10安装新版宝塔，fastadmin后台404 解决办法](https://ask.fastadmin.net/article/33122.html)
