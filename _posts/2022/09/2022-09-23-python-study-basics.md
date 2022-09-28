@@ -340,3 +340,8 @@ def func(name: str, age: int):
 
 func('name', 3)
 ```
+
+## 取一级目录
+```
+BASE_PATH = os.path.dirname(os.path.dirname(os.path.abspath("__file__")))
+```
