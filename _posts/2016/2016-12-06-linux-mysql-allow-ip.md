@@ -47,13 +47,13 @@ COMMIT
 
 -A INPUT -s 139.199.196.106/32 -p tcp -m tcp --dport 3306 -j ACCEPT
 -A INPUT -s 127.0.0.1/32 -p tcp -m tcp --dport 11211 -j ACCEPT
--A INPUT -s 121.40.116.5/32 -p tcp -m tcp --dport 11211 -j ACCEPT
+-A INPUT -s 121.40.222.5/32 -p tcp -m tcp --dport 11211 -j ACCEPT
 -A INPUT -s 139.199.196.106/32 -p tcp -m tcp --dport 3306 -j ACCEPT
 -A INPUT -s 139.199.196.106/32 -p tcp -m tcp --dport 11211 -j ACCEPT
 -A INPUT -s 101.201.104.144/32 -p tcp -m tcp --dport 11211 -j ACCEPT
 -A INPUT -s 222.240.156.50/32 -p tcp -m tcp --dport 3306 -j ACCEPT
 -A INPUT -s 127.0.0.1/32 -p tcp -m tcp --dport 3306 -j ACCEPT
--A INPUT -s 121.40.116.5/32 -p tcp -m tcp --dport 3306 -j ACCEPT
+-A INPUT -s 121.40.222.5/32 -p tcp -m tcp --dport 3306 -j ACCEPT
 -A INPUT -s 127.0.0.1/32 -p tcp -m tcp --dport 1521 -j ACCEPT
 
 # 注意以下两行一定要放在后面 ====== start

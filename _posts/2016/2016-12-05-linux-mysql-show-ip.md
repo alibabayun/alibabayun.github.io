@@ -12,5 +12,5 @@ tags: ["mysql"]
 mysql 查看当前ip连接数
 
 ```
-mysql -u root -h121.40.116.5 -p123456 -e"show processlist\G;"| egrep "Host\:" | awk -F: '{ print $2 }'| sort | uniq -c 
+mysql -u root -h121.40.222.5 -p123456 -e"show processlist\G;"| egrep "Host\:" | awk -F: '{ print $2 }'| sort | uniq -c 
 ```
