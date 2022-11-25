@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "go main中引入同级文件 command-line-arguments"
+title: "go main中引入同级文件"
 keywords: ["go"]
-description: "go main中引入同级文件 command-line-arguments"
+description: "go main中引入同级文件"
 category: "go"
 tags: ["go"]
 ---
