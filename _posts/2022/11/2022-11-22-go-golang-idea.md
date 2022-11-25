@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "MAC上使用go ide时，每次重新build之后都会弹出“您要应用程序“main”接受传入网络连接吗？”)"
+title: "您要应用程序 main 接受传入网络连接吗"
 keywords: ["go"]
-description: "MAC上使用go ide时，每次重新build之后都会弹出“您要应用程序“main”接受传入网络连接吗？”)"
+description: "您要应用程序 main 接受传入网络连接吗"
 category: "go"
 tags: ["go"]
 ---
