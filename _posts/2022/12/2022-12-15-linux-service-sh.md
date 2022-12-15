@@ -49,17 +49,18 @@ touch /lib/systemd/system/go-project-name.service
 
 ``` shell
 [Unit]
-Description=go project api
- 
+Description=iot_service api
+
 [Service]
 Type=simple
 Restart=always
 RestartSec=5s
-ExecStart=/service_dir/user-manager/main
-WorkingDirectory=/service_dir/user-manager/
- 
+ExecStart=/bin/sh -c "/opt/lc/project/iot_service >> /opt/lc/project/nohop.log 2>&1"
+WorkingDirectory=/opt/lc/project/
+
 [Install]
 WantedBy=multi-user.target
+
 ```
 #### ExecStart是go可执行文件的路径
 
