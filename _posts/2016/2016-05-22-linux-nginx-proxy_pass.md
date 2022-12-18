@@ -8,11 +8,16 @@ tags: ["反向代理", "nginx"]
 ---
 {% include JB/setup %}
 
+在Centos7.6上安装：
+```
+yum install -y nginx
+```
+
 利用NGINX 反向代理到内网
 
-soj.test.kangzishangcheng.net  解析到腾讯云上，
+soj.test.sss.net  解析到腾讯云上，
 
-然后指定内网domain  ：  test.soj.com
+然后指定内网domain  ：  test.jd.com;
 
 ```
 upstream company_proxy {
@@ -32,7 +37,7 @@ server {
 
         #Proxy Settings
         proxy_redirect     off;
-        proxy_set_header   Host            test.soj.com;
+        proxy_set_header   Host            test.jd.com;
         proxy_set_header   X-Real-IP        $remote_addr;
         proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
         proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
