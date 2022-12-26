@@ -10,6 +10,24 @@ tags: ["golang"]
 本例子只是记录，2个时间以的所有天数与月份数，记录一下
 
 ```go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	start := "2022-01-01"
+	end := "2022-12-01"
+	list := GetTimeDays(start, end)
+	fmt.Printf("list = %v \n", list)
+
+	months := GetTimeMonths(start, end)
+	fmt.Printf("months = %v \n", months)
+
+}
+
 // GetTimeDays 时间区间的所有天数
 func GetTimeDays(start_time, stop_time string) []string {
 	tm1, _ := time.Parse("2006-01-02", start_time)
