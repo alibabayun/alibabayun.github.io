@@ -10,7 +10,7 @@ tags: ["go"]
 golang的CGO_ENABLED交叉编译(Linux, Windows)
 
 ### 示例`build.bat`
-``` window shell
+``` sh
 set GOARCH=amd64
 set GOOS=linux
 set CGO_ENABLED=1
@@ -20,7 +20,7 @@ go build -o build/iot_service ./
 ```
 
 ### makefile 
-```
+```sh
 export GOARCH=amd64
 export GOOS=linux
 export CGO_ENABLED=1
