@@ -9,6 +9,9 @@ tags: ["js"]
 ## 前言
 最近在项目中，有些老版本的项目代码，报一些语言错误，为统一处理，现目录下添加`.eslintrc.js`文件，来忽略错误 
 
+## 参考资料
+![](https://blog.csdn.net/weixin_43222302/article/details/104760922)
+
 ## 代码如下
 ```js
 module.exports = {
