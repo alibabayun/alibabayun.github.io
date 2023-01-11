@@ -49,17 +49,19 @@ cert /etc/openvpn/certs/server.crt
 key /etc/openvpn/certs/server.key
 dh /etc/openvpn/certs/dh.pem
 server 10.0.0.0 255.255.255.0
-
+#固定用户ip
 ifconfig-pool-persist ipp.txt
-
+#将本地的ip 发布出去
 push "route 172.17.0.0 255.255.255.0"
 client-to-client
 keepalive 10 120
 cipher AES-256-CBC
 compress lz4-v2
-push "compress lz4-v2"
-comp-lzo adaptive
+#push "compress lz4-v2"
 
+#这个如果开了lzo压缩一定要配置对
+push "comp-lzo no"
+comp-lzo adaptive
 
 max-clients 2048
 user openvpn
@@ -68,7 +70,7 @@ status /var/log/openvpn/openvpn-status.log
 log-append /var/log/openvpn/openvpn.log
 verb 3
 mute 20
-tls-auth /etc/openvpn/certs/ta.key 0 
+tls-auth /etc/openvpn/certs/ta.key 0
 crl-verify /etc/openvpn/easy-rsa-server/3/pki/crl.pem
 ```
 
