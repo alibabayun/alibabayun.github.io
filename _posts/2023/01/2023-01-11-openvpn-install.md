@@ -26,7 +26,7 @@ down	/etc/openvpn/openvpn.down
 nobind
 tls-client
 client
-remote 110.40.223.170
+remote 110.40.223.177
 # LZO压缩
 comp-lzo yes
 ca /lib/uci/upload/cbid.openvpn.openvpn.ca
@@ -77,7 +77,7 @@ win客户端连接的话，下也需要下载对应的版本
 client
 dev tun
 proto tcp
-remote 110.40.223.170 1194
+remote 110.40.223.177 1194
 resolv-retry infinite
 nobind
 #persist-key
