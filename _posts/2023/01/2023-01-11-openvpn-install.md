@@ -106,6 +106,8 @@ tls-auth ta.key 1
 1. [企业级VPN服务OpenVPN](https://www.zhangzhuo.ltd/articles/2021/05/17/1621240231976.html)
 2. [OpenVPN一键安装脚本](https://www.zhangzhuo.ltd/articles/2021/05/20/1621484344221.html)
 3. [OpenVPN server端 配置文件的详细说明](https://www.softool.cn/blog-92.html)
+4. [OpenVPN的客户端和服务器端的配置实现客户端远程访问服务器内网（局域网）](https://zhuanlan.zhihu.com/p/29780922)
+
 ### 服务端-操作步骤
 1. 将下面脚本在服务器上保存为`vpn.sh`
 2. 运行`vpn.sh`选择1安装
