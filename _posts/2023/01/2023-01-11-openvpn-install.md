@@ -6,6 +6,97 @@ description: "OpenVPN一键安装脚本"
 category: "openvpn"
 tags: ["openvpn"]
 ---
+
+### 常见问题
+一般客户端-路由器要启用LZO压缩
+linux 客户端
+
+```
+proto	tcp
+port	1194
+dev	tun
+cipher	AES-256-CBC
+log	/var/log/openvpn.log
+resolv-retry infinite
+persist-key
+persist-tun
+script-security 2
+up	/etc/openvpn/openvpn.up
+down	/etc/openvpn/openvpn.down
+nobind
+tls-client
+client
+remote 110.40.223.170
+# LZO压缩
+comp-lzo yes
+ca /lib/uci/upload/cbid.openvpn.openvpn.ca
+cert /lib/uci/upload/cbid.openvpn.openvpn.cert
+key /lib/uci/upload/cbid.openvpn.openvpn.key
+tls-auth /lib/uci/upload/cbid.openvpn.openvpn.tls_auth_key 1
+verb 3
+
+```
+
+服务器也要修改
+
+```
+port 1194
+proto tcp
+#pexplicit-exit-notify 1
+dev tun
+ca /etc/openvpn/certs/ca.crt
+cert /etc/openvpn/certs/server.crt
+key /etc/openvpn/certs/server.key
+dh /etc/openvpn/certs/dh.pem
+server 10.0.0.0 255.255.255.0
+
+ifconfig-pool-persist ipp.txt
+
+push "route 172.17.0.0 255.255.255.0"
+client-to-client
+keepalive 10 120
+cipher AES-256-CBC
+compress lz4-v2
+push "compress lz4-v2"
+comp-lzo adaptive
+
+
+max-clients 2048
+user openvpn
+group openvpn
+status /var/log/openvpn/openvpn-status.log
+log-append /var/log/openvpn/openvpn.log
+verb 3
+mute 20
+tls-auth /etc/openvpn/certs/ta.key 0 
+crl-verify /etc/openvpn/easy-rsa-server/3/pki/crl.pem
+```
+
+win客户端连接的话，下也需要下载对应的版本
+```
+client
+dev tun
+proto tcp
+remote 110.40.223.170 1194
+resolv-retry infinite
+nobind
+#persist-key
+#persist-tun
+ca ca.crt
+cert client.crt
+key client.key
+remote-cert-tls server
+#tls-auth ta.key 1
+cipher AES-256-CBC
+verb 3
+#注释这行
+#compress lz4-v2
+#新增这行
+comp-lzo yes
+tls-auth ta.key 1
+```
+
+
 ### 介绍
 专用网：专用网就是在两个网络（例如，北京和广州）之间架设一条专用线路，但是它并不需要真正地去铺设光缆之类的物理线路。虽然没有亲自去铺设，但是需要向电信运营商申请租用专线，在这条专用的线路上只传输自己的信息,所以安全稳定,同时也费用高昂
 
@@ -18,6 +109,7 @@ tags: ["openvpn"]
 2. 运行`vpn.sh`选择1安装
 3. 安装后选择 2) 给用户颁发证书, 将这个颁发的证书下载 到客服 端，里面包含了`client.ovpn`
 4. 修改`/etc/openvpn/server.conf`，可参考[这里](https://www.zhangzhuo.ltd/articles/2021/05/17/1621240231976.html)
+
 ```
 port 1194
 proto tcp
