@@ -49,17 +49,19 @@ cert /etc/openvpn/certs/server.crt
 key /etc/openvpn/certs/server.key
 dh /etc/openvpn/certs/dh.pem
 server 10.0.0.0 255.255.255.0
-
+#固定用户ip
 ifconfig-pool-persist ipp.txt
-
+#将本地的ip 发布出去
 push "route 172.17.0.0 255.255.255.0"
 client-to-client
 keepalive 10 120
 cipher AES-256-CBC
 compress lz4-v2
-push "compress lz4-v2"
-comp-lzo adaptive
+#push "compress lz4-v2"
 
+#这个如果开了lzo压缩一定要配置对
+push "comp-lzo no"
+comp-lzo adaptive
 
 max-clients 2048
 user openvpn
@@ -68,7 +70,7 @@ status /var/log/openvpn/openvpn-status.log
 log-append /var/log/openvpn/openvpn.log
 verb 3
 mute 20
-tls-auth /etc/openvpn/certs/ta.key 0 
+tls-auth /etc/openvpn/certs/ta.key 0
 crl-verify /etc/openvpn/easy-rsa-server/3/pki/crl.pem
 ```
 
@@ -104,6 +106,8 @@ tls-auth ta.key 1
 1. [企业级VPN服务OpenVPN](https://www.zhangzhuo.ltd/articles/2021/05/17/1621240231976.html)
 2. [OpenVPN一键安装脚本](https://www.zhangzhuo.ltd/articles/2021/05/20/1621484344221.html)
 3. [OpenVPN server端 配置文件的详细说明](https://www.softool.cn/blog-92.html)
+4. [OpenVPN的客户端和服务器端的配置实现客户端远程访问服务器内网（局域网）](https://zhuanlan.zhihu.com/p/29780922)
+
 ### 服务端-操作步骤
 1. 将下面脚本在服务器上保存为`vpn.sh`
 2. 运行`vpn.sh`选择1安装
