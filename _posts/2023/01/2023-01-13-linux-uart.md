@@ -172,311 +172,616 @@ BusyBox 是一个集成了三百多个最常用Linux命令和工具的软件。B
 - fallocate[将块预分配给文件](https://www.onitroad.com/jc/linux/linux/command/fallocate.html)
 
 - fatattr [更改FAT文件系统上的文件属性。](https://boxmatrix.info/wiki/Property:fatattr)
-fbset,
-fbsplash,
-fdflush,
-fdformat,
-fdisk,
-fgconsole,
-fgrep,
-find,
-findfs,
-flock,
-fold,
-free,
-freeramdisk,
-fsck,
-fsck.minix,
-fsfreeze,
-fstrim,
-fsync,
-ftpd,
-ftpget,
-ftpput,
-fuser,
-getopt,
-getty,
-grep,
-groups,
-gunzip,
-gzip,
-halt,
-hd,
-hdparm,
-head,
-hexdump,
-hexedit,
-hostid,
-hostname,
-httpd,
-hush,
-hwclock,
-i2cdetect,
-i2cdump,
-i2cget,
-i2cset,
-i2ctransfer,
-id,
-ifconfig,
-ifdown,
-ifenslave,
-ifplugd,
-ifup,
-inetd,
-init,
-insmod,
-install,
-ionice,
-iostat,
-ip,
-ipaddr,
-ipcalc,
-ipcrm,
-ipcs,
-iplink,
-ipneigh,
-iproute,
-iprule,
-iptunnel,
-kbd_mode,
-kill,
-killall,
-killall5,
-klogd,
-last,
-less,
-link,
-linux32,
-linux64,
-linuxrc,
-ln,
-loadfont,
-loadkmap,
-logger,
-login,
-logname,
-logread,
-losetup,
-lpd,
-lpq,
-lpr,
-ls,
-lsattr,
-lsmod,
-lsof,
-lspci,
-lsscsi,
-lsusb,
-lzcat,
-lzma,
-lzop,
-makedevs,
-makemime,
-man,
-md5sum,
-mdev,
-mesg,
-microcom,
-mkdir,
-mkdosfs,
-mke2fs,
-mkfifo,
-mkfs.ext2,
-mkfs.minix,
-mkfs.vfat,
-mknod,
-mkpasswd,
-mkswap,
-mktemp,
-modinfo,
-modprobe,
-more,
-mount,
-mountpoint,
-mpstat,
-mt,
-nameif,
-nanddump,
-nandwrite,
-nbd-client,
-nc,
-netstat,
-nice,
-nl,
-nmeter,
-nohup,
-nologin,
-nproc,
-nsenter,
-nslookup,
-ntpd,
-nuke,
-od,
-openvt,
-partprobe,
-passwd,
-paste,
-patch,
-pgrep,
-pidof,
-ping,
-ping6,
-pipe_progress,
-pivot_root,
-pkill,
-pmap,
-popmaildir,
-poweroff,
-powertop,
-printenv,
-printf,
-pscan,
-pstree,
-pwdx,
-raidautorun,
-rdate,
-rdev,
-readahead,
-readlink,
-readprofile,
-realpath,
-reboot,
-reformime,
-remove-shell,
-renice,
-reset,
-resize,
-resume,
-rev,
-rmdir,
-rmmod,
-route,
-rpm,
-rpm2cpio,
-rtcwake,
-run-init,
-run-parts,
-runlevel,
-runsv,
-runsvdir,
-rx,
-script,
-scriptreplay,
-sed,
-sendmail,
-seq,
-setarch,
-setconsole,
-setfattr,
-setfont,
-setkeycodes,
-setlogcons,
-setpriv,
-setserial,
-setsid,
-setuidgid,
-sh,
-sha1sum,
-sha256sum,
-sha3sum,
-sha512sum,
-showkey,
-shred,
-shuf,
-slattach,
-smemcap,
-softlimit,
-sort,
-split,
-ssl_client,
-start-stop-daemon,
-stat,
-strings,
-stty,
-su,
-sulogin,
-sum,
-sv,
-svc,
-svlogd,
-svok,
-swapoff,
-swapon,
-switch_root,
-sync,
-sysctl,
-syslogd,
-tac,
-tail,
-tar,
-taskset,
-tc,
-tcpsvd,
-tee,
-telnet,
-telnetd,
-test,
-tftp,
-tftpd,
-time,
-timeout,
-top,
-touch,
-tr,
-traceroute,
-traceroute6,
-true,
-truncate,
-ts,
-tty,
-ttysize,
-tunctl,
-ubiattach,
-ubidetach,
-ubimkvol,
-ubirename,
-ubirmvol,
-ubirsvol,
-ubiupdatevol,
-udhcpc,
-udhcpc6,
-udhcpd,
-udpsvd,
-uevent,
-umount,
-uname,
-unexpand,
-uniq,
-unix2dos,
-unlink,
-unlzma,
-unshare,
-unxz,
-unzip,
-uptime,
-users,
-usleep,
-uudecode,
-uuencode,
-vconfig,
-vi,
-vlock,
-volname,
-w,
-wall,
-watch,
-watchdog,
-wc,
-wget,
-which,
-who,
-whoami,
-whois,
-xargs,
-xxd,
-xz,
-xzcat,
-yes,
-zcat,
+
+- fbset [设置景框缓冲区 调整画面之分辨率](https://www.runoob.com/linux/linux-comm-fbset.html)
+
+- fbsplash [启动屏幕的用户空间实现](https://wiki.archlinux.org/title/Fbsplash)
+
+- fdflush [强制软盘驱动器检测磁盘更改。](https://boxmatrix.info/wiki/Property:fdflush)
+
+- fdformat [格式化软盘。](https://boxmatrix.info/wiki/Property:fdformat)
+
+- fdisk [管理磁盘分区](https://zhuanlan.zhihu.com/p/56273534)
+
+- fgconsole [显示活动的虚拟终端数量](https://www.linuxcool.com/fgconsole
+
+- fgrep [搜索文字字符串,fgrep命令 是用来搜索 file 参数指定的输入文件（缺省为标准输入）中的匹配模式的行](https://cloud.tencent.com/developer/article/1869305)
+
+- find [搜索命令](http://c.biancheng.net/view/779.html)
+
+- findfs [通过卷标名查找对应的文件系统](https://man.5ibc.net/findfs)
+
+- flock [任务互斥](https://juejin.cn/post/6844903829947809800)
+
+- fold [限制文件列宽](https://www.runoob.com/linux/linux-comm-fold.html)
+
+- free [系统内存的使用情况](https://www.cnblogs.com/ultranms/p/9254160.html)
+
+- freeramdisk [释放指定ramdisk使用的所有内存。](https://boxmatrix.info/wiki/Property:freeramdisk)
+
+- fsck [检查文件系统并尝试修复出现的错误](http://c.biancheng.net/view/887.html)
+
+- fsfreeze [拍摄快照前，使用 fsfreeze 命令暂停对文件系统的访问](https://blog.51cto.com/u_15127570/2711288)
+
+- fstrim [回收文件系统中未使用的块资源](https://www.linuxcool.com/fstrim)
+
+- fsync [对由文件描述符filedes指定的单一文件起作用](https://blog.csdn.net/hmxz2nn/article/details/82868980)
+
+- ftpd [自带ftp服务器](http://ljg.farbox.com/post/2015-03-19-zai-busyboxshang-qi-dong-ftpfu-wu)
+
+- ftpget []()
+
+- ftpput []()
+
+- fuser []()
+
+- getopt []()
+
+- getty []()
+
+- grep []()
+
+- groups []()
+
+- gunzip []()
+
+- gzip []()
+
+- halt []()
+
+- hd []()
+
+- hdparm []()
+
+- head []()
+
+- hexdump []()
+
+- hexedit []()
+
+- hostid []()
+
+- hostname []()
+
+- httpd []()
+
+- hush []()
+
+- hwclock []()
+
+- i2cdetect []()
+
+- i2cdump []()
+
+- i2cget []()
+
+- i2cset []()
+
+- i2ctransfer []()
+
+- id []()
+
+- ifconfig []()
+
+- ifdown []()
+
+- ifenslave []()
+
+- ifplugd []()
+
+- ifup []()
+
+- inetd []()
+
+- init []()
+
+- insmod []()
+
+- install []()
+
+- ionice []()
+
+- iostat []()
+
+- ip []()
+
+- ipaddr []()
+
+- ipcalc []()
+
+- ipcrm []()
+
+- ipcs []()
+
+- iplink []()
+
+- ipneigh []()
+
+- iproute []()
+
+- iprule []()
+
+- iptunnel []()
+
+- kbd_mode []()
+
+- kill []()
+
+- killall []()
+
+- killall5 []()
+
+- klogd []()
+
+- last []()
+
+- less []()
+
+- link []()
+
+- linux32 []()
+
+- linux64 []()
+
+- linuxrc []()
+
+- ln []()
+
+- loadfont []()
+
+- loadkmap []()
+
+- logger []()
+
+- login []()
+
+- logname []()
+
+- logread []()
+
+- losetup []()
+
+- lpd []()
+
+- lpq []()
+
+- lpr []()
+
+- ls []()
+
+- lsattr []()
+
+- lsmod []()
+
+- lsof []()
+
+- lspci []()
+
+- lsscsi []()
+
+- lsusb []()
+
+- lzcat []()
+
+- lzma []()
+
+- lzop []()
+
+- makedevs []()
+
+- makemime []()
+
+- man []()
+
+- md5sum []()
+
+- mdev []()
+
+- mesg []()
+
+- microcom []()
+
+- mkdir []()
+
+- mkdosfs []()
+
+- mke2fs []()
+
+- mkfifo []()
+
+- mkfs []()
+.ext2
+- mkfs []()
+.minix
+- mkfs []()
+.vfat
+- mknod []()
+
+- mkpasswd []()
+
+- mkswap []()
+
+- mktemp []()
+
+- modinfo []()
+
+- modprobe []()
+
+- more []()
+
+- mount []()
+
+- mountpoint []()
+
+- mpstat []()
+
+- mt []()
+
+- nameif []()
+
+- nanddump []()
+
+- nandwrite []()
+
+- nbd []()
+-client
+- nc []()
+
+- netstat []()
+
+- nice []()
+
+- nl []()
+
+- nmeter []()
+
+- nohup []()
+
+- nologin []()
+
+- nproc []()
+
+- nsenter []()
+
+- nslookup []()
+
+- ntpd []()
+
+- nuke []()
+
+- od []()
+
+- openvt []()
+
+- partprobe []()
+
+- passwd []()
+
+- paste []()
+
+- patch []()
+
+- pgrep []()
+
+- pidof []()
+
+- ping []()
+
+- ping6 []()
+
+- pipe_progress []()
+
+- pivot_root []()
+
+- pkill []()
+
+- pmap []()
+
+- popmaildir []()
+
+- poweroff []()
+
+- powertop []()
+
+- printenv []()
+
+- printf []()
+
+- pscan []()
+
+- pstree []()
+
+- pwdx []()
+
+- raidautorun []()
+
+- rdate []()
+
+- rdev []()
+
+- readahead []()
+
+- readlink []()
+
+- readprofile []()
+
+- realpath []()
+
+- reboot []()
+
+- reformime []()
+
+- remove []()
+-shell
+- renice []()
+
+- reset []()
+
+- resize []()
+
+- resume []()
+
+- rev []()
+
+- rmdir []()
+
+- rmmod []()
+
+- route []()
+
+- rpm []()
+
+- rpm2cpio []()
+
+- rtcwake []()
+
+- run []()
+-init
+- run []()
+-parts
+- runlevel []()
+
+- runsv []()
+
+- runsvdir []()
+
+- rx []()
+
+- script []()
+
+- scriptreplay []()
+
+- sed []()
+
+- sendmail []()
+
+- seq []()
+
+- setarch []()
+
+- setconsole []()
+
+- setfattr []()
+
+- setfont []()
+
+- setkeycodes []()
+
+- setlogcons []()
+
+- setpriv []()
+
+- setserial []()
+
+- setsid []()
+
+- setuidgid []()
+
+- sh []()
+
+- sha1sum []()
+
+- sha256sum []()
+
+- sha3sum []()
+
+- sha512sum []()
+
+- showkey []()
+
+- shred []()
+
+- shuf []()
+
+- slattach []()
+
+- smemcap []()
+
+- softlimit []()
+
+- sort []()
+
+- split []()
+
+- ssl_client []()
+
+- start []()
+-stop-daemon
+- stat []()
+
+- strings []()
+
+- stty []()
+
+- su []()
+
+- sulogin []()
+
+- sum []()
+
+- sv []()
+
+- svc []()
+
+- svlogd []()
+
+- svok []()
+
+- swapoff []()
+
+- swapon []()
+
+- switch_root []()
+
+- sync []()
+
+- sysctl []()
+
+- syslogd []()
+
+- tac []()
+
+- tail []()
+
+- tar []()
+
+- taskset []()
+
+- tc []()
+
+- tcpsvd []()
+
+- tee []()
+
+- telnet []()
+
+- telnetd []()
+
+- test []()
+
+- tftp []()
+
+- tftpd []()
+
+- time []()
+
+- timeout []()
+
+- top []()
+
+- touch []()
+
+- tr []()
+
+- traceroute []()
+
+- traceroute6 []()
+
+- true []()
+
+- truncate []()
+
+- ts []()
+
+- tty []()
+
+- ttysize []()
+
+- tunctl []()
+
+- ubiattach []()
+
+- ubidetach []()
+
+- ubimkvol []()
+
+- ubirename []()
+
+- ubirmvol []()
+
+- ubirsvol []()
+
+- ubiupdatevol []()
+
+- udhcpc []()
+
+- udhcpc6 []()
+
+- udhcpd []()
+
+- udpsvd []()
+
+- uevent []()
+
+- umount []()
+
+- uname []()
+
+- unexpand []()
+
+- uniq []()
+
+- unix2dos []()
+
+- unlink []()
+
+- unlzma []()
+
+- unshare []()
+
+- unxz []()
+
+- unzip []()
+
+- uptime []()
+
+- users []()
+
+- usleep []()
+
+- uudecode []()
+
+- uuencode []()
+
+- vconfig []()
+
+- vi []()
+
+- vlock []()
+
+- volname []()
+
+- w []()
+
+- wall []()
+
+- watch []()
+
+- watchdog []()
+
+- wc []()
+
+- wget []()
+
+- which []()
+
+- who []()
+
+- whoami []()
+
+- whois []()
+
+- xargs []()
+
+- xxd []()
+
+- xz []()
+
+- xzcat []()
+
+- yes []()
+
+- zcat []()
+
 zcip
 ```
