@@ -34,6 +34,13 @@ push "net_gateway"
 ```
 注意事项：要重连后，再添加下面路由转发
 
+## openvpn客户端配置
+```
+# 全部流量通过VPN则添加这一行。
+# redirect-gateway def1
+```
+参考资料：https://www.todocker.cn/2668.html
+
 
 ## 示例ip.me
 ### 路由添加
