@@ -37,7 +37,7 @@ push "net_gateway"
 ## openvpn客户端配置
 ```
 # 全部流量通过VPN则添加这一行。
-# redirect-gateway def1
+redirect-gateway def1
 ```
 参考资料：https://www.todocker.cn/2668.html
 
