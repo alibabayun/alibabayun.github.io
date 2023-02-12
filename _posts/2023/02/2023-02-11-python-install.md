@@ -21,4 +21,11 @@ pip install pipreqs
 pipreqs .
 ```
 
-参考：https://blog.csdn.net/pearl8899/article/details/113877334
+### 常见问题
+1. 参考：https://blog.csdn.net/pearl8899/article/details/113877334
+
+2. arm找不到包
+参考：https://blog.csdn.net/phker/article/details/118190816
+```
+pip install torch==1.10.0 torchvision==0.7.0 torchaudio==0.10.0 -f https://torch.kmtea.eu/whl/stable-cn.html
+```
