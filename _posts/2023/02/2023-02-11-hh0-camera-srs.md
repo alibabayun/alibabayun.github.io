@@ -19,7 +19,6 @@ rtsp://admin:passwd@192.168.110.12:554/h264/ch1/main/av_stream
 搭建centos 环境 ：http://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64/?spm=a2c6h.12873639.article-detail.7.64aa2422mqAnOd
 这里使用：CentOS-7-x86_64-Minimal-2009.iso
 
-
 ### ffmpeg
 ```
 ffmpeg -re -i demo.flv -c copy -f flv rtmp://43.136.182.190/live/livestream?secret=xxxx
