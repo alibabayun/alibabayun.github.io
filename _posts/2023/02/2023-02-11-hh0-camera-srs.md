@@ -24,3 +24,6 @@ rtsp://admin:passwd@192.168.110.12:554/h264/ch1/main/av_stream
 ffmpeg -re -i demo.flv -c copy -f flv rtmp://43.136.182.190/live/livestream?secret=xxxx
 ffmpeg -f flv -listen 1 -i 'rtsp://admin:xxxx@@192.168.110.12:554/h264/ch1/main/av_stream' -c copy 'rtmp://43.136.182.190/live/livestream?secret=9d7c20422d3b43be8a2e6f35dec12dda'
 ```
+
+### 海康gb2818接入srs
+https://blog.csdn.net/Alan_ran/article/details/126739871
