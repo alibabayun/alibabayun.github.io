@@ -29,13 +29,17 @@ ffmpeg -f flv -listen 1 -i 'rtsp://admin:xxxx@@192.168.110.12:554/h264/ch1/main/
 ### 海康gb2818接入srs
 https://blog.csdn.net/Alan_ran/article/details/126739871
 
-### srs安装
+### srs安装 (官方)
 ```
 git clone -b develop https://gitee.com/ossrs/srs.git &&
 cd srs/trunk && ./configure && make && ./objs/srs -c conf/srs.conf
 ```
-
+注意：如果要用gb28181 ,要加`./configure --gb28181=on`
+```
+cd srs/trunk && ./configure --gb28181=on && make && ./objs/srs -c conf/srs.conf
+```
 ### srs配置文档
+`vi config/test.conf`添加以下配置
 ```
 listen              1935;
 pid                 ./objs/srs.pid;
@@ -158,7 +162,9 @@ vhost __defaultVhost__ {
     }
 
     http_hooks {
-        enabled         on;
+        # 线上需要开启这些监听的回调
+        #enabled         on;
+        enabled         off;
         on_connect      http://127.0.0.1:8085/api/v1/clients;
         on_close        http://127.0.0.1:8085/api/v1/clients;
         on_publish      http://127.0.0.1:8085/api/v1/streams;
@@ -184,10 +190,22 @@ vhost __defaultVhost__ {
 
 ### 启动命令
 ```
-./objs/srs -c conf/lc.conf &
+./objs/srs -c conf/test.conf &
+```
+
+### 关防火墙
+```
+systemctl status firewalld.service
+systemctl stop firewalld.service
+systemctl disable firewalld.service
 ```
 
 ### 测试
 ```
 ffmpeg -re -i ./doc/source.flv -c copy -f flv -y rtmp://localhost/live/livestream
 ```
+
+
+### 调试软件
+1. [VLC media player](https://www.videolan.org/vlc/)
+2. [OBS Studio](https://obsproject.com/)
