@@ -19,8 +19,8 @@ Error 1271: Illegal mix of collations for operation 'UNION'
 
 
 ## sql
+批量拼接修改字段排序规则SQL
 ```
--- 批量拼接修改字段排序规则SQL
 SELECT TABLE_SCHEMA                  '数据库',
        TABLE_NAME                    '表',
        COLUMN_NAME                   '字段',
@@ -38,21 +38,5 @@ SELECT TABLE_SCHEMA                  '数据库',
               COLUMN_COMMENT, '\';') '修正SQL'
 FROM information_schema.`COLUMNS`
 WHERE TABLE_SCHEMA = 'iot'
-and TABLE_NAME in ("device_camera",
-"device_wisdom_gateway",
-"device_light_control",
-"device_switch_box",
-"device_info_board",
-"device_opto_sensor",
-"device_zigbee",
-"device_a_key_alarm_terminal",
-"device_a_key_alarm_serve",
-"device_transformer",
-"device_lamp_pole",
-"device_lamp_pole",
-"device_bridge_sensor",
-"device_ip_broadcast",
-"device_ip_broadcast")
-  and COLLATION_NAME RLIKE 'utf8mb4_0900_ai_ci';
-
+      and COLUMN_TYPE like "varchar%"
 ```
