@@ -28,6 +28,7 @@ export PATH
 ```
 
 2. `Makefile`文件
+以下是 代码
 ```
 #打包程序名称
 APP_NAME="its"
@@ -49,6 +50,7 @@ build:
 
 
 2. goc文件
+以下是文件
 ```
 package main
 
@@ -421,6 +423,4 @@ double -->  C.double -->  float64
 wchar_t -->  C.wchar_t  -->
 void * -> unsafe.Pointer
 */
-
-
 ```
