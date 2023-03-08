@@ -13,8 +13,9 @@ tags: ["go"]
 当我们开始接触嵌入式开发后，事情变的不一样了，你在电脑上写程序，在电脑上编译出可执行文件，最后这个可执行文件需要下载到你的开发板上运行。程序最后运行的环境变了，比如你的开发板是基于 Arm 的——程序在 X86 上编辑，编译，最终运行在另一个和 X86 完全不同的架构的 Arm 芯片上。
 
 ## 参考资料
-[https://cloud.tencent.com/developer/article/1571937](https://cloud.tencent.com/developer/article/1571937)
-[Golang : multiple definition of CGO ported package](https://www.coder.work/article/7496938)
+1. [https://cloud.tencent.com/developer/article/1571937](https://cloud.tencent.com/developer/article/1571937)
+
+2. [Golang : multiple definition of CGO ported package](https://www.coder.work/article/7496938)
 
 
 ## 主要配置
