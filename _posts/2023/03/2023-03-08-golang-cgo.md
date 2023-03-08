@@ -42,10 +42,9 @@ export CC=arm-openwrt-linux-gcc -I/usr/staging_dir/target-arm_cortex-a7+neon_uCl
 export CXX=arm-openwrt-linux-uclibcgnueabi-c++
 
 clear:
-    @$(RM) ${BINARY}
-
+	@$(RM) ${BINARY}
 build:
-    @go build  -a -v  -o ${BINARY} ./
+	@go build -o ${BINARY} ./
 ```
 
 
@@ -68,8 +67,8 @@ package main
 #include <stdlib.h>
 #include <string.h>
 
-void STDCALL* CGO_IMOS_MW_STATUS_REPORT_CALLBACK(IN CHAR *pcUserID,IN ULONG ulReportType,IN VOID *pParam){}
-void STDCALL* CGO_IMOS_MW_TMS_MULTIUSER_PIC_UPLOAD(IN IMOS_MW_MULTI_UNIVIEW_PROTOCOL_HEADER_S *pstUniviewData,IN  ULONG ulStreamHandle){}
+void STDCALL* CgoImosMwStatusReportCallback(IN CHAR *pcUserID,IN ULONG ulReportType,IN VOID *pParam);
+void STDCALL* CgoImosMwTmsMultiuserPicUpload(IN IMOS_MW_MULTI_UNIVIEW_PROTOCOL_HEADER_S *pstUniviewData,IN  ULONG ulStreamHandle);
 */
 import "C"
 import (
@@ -251,7 +250,7 @@ func (o *ITSDevice) SetPicStreamDataCallback() error {
 	defer C.free(unsafe.Pointer(usrid))
 	defer C.free(unsafe.Pointer(ip))
 	var ulCaptureStreamHandle C.ulong
-	res := C.IMOS_MW_SetPicStreamDataCallback(usrid, 0, ip, C.IMOS_MW_TMS_MULTIUSER_PIC_UPLOAD_PF(C.CGO_IMOS_MW_TMS_MULTIUSER_PIC_UPLOAD), &ulCaptureStreamHandle)
+	res := C.IMOS_MW_SetPicStreamDataCallback(usrid, 0, ip, C.IMOS_MW_TMS_MULTIUSER_PIC_UPLOAD_PF(C.CgoImosMwTmsMultiuserPicUpload), &ulCaptureStreamHandle)
 	if res == C.ERR_COMMON_SUCCEED {
 		o.Handle = uint64(ulCaptureStreamHandle)
 		return nil
@@ -341,7 +340,7 @@ func init() {
 		panic(msg)
 	}
 	SetLog(util.GetPath(3))
-	C.IMOS_MW_SetStatusCallback(C.IMOS_MW_STATUS_REPORT_CALLBACK_PF(C.CGO_IMOS_MW_STATUS_REPORT_CALLBACK))
+	C.IMOS_MW_SetStatusCallback(C.IMOS_MW_STATUS_REPORT_CALLBACK_PF(C.CgoImosMwStatusReportCallback))
 }
 
 func uninit() {
@@ -422,5 +421,6 @@ double -->  C.double -->  float64
 wchar_t -->  C.wchar_t  -->
 void * -> unsafe.Pointer
 */
+
 
 ```
