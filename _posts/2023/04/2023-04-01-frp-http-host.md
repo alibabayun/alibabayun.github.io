@@ -25,7 +25,7 @@ vhost_http_port = 7001
 ### 客户端
 ```
 [common]
-server_addr = 39.96.2.195
+server_addr = 127.0.0.1
 server_port = 7000
 
 #[ssh]
