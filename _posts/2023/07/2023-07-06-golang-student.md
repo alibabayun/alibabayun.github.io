@@ -14,4 +14,4 @@ tags: ["golang"]
 在软件开发中，会遇到有些问题多次重复出现，而且有一定的相似性和规律性。如果将它们归纳成一种简单的语言，那么这些问题实例将是该语言的一些句子，这样就可以用“编译原理”中的解释器模式来实现了。虽然使用解释器模式的实例不是很多，但对于满足以上特点，且对运行效率要求不是很高的应用实例，如果用解释器模式来实现，其效果是非常好的。
 
 ### 参考链接
-![https://www.cnblogs.com/ourongxin/p/16192480.html](https://www.cnblogs.com/ourongxin/p/16192480.html)
+[https://www.cnblogs.com/ourongxin/p/16192480.html](https://www.cnblogs.com/ourongxin/p/16192480.html)
