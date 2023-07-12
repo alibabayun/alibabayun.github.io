@@ -36,7 +36,11 @@ func main() {
  // 略
 }
 ```
-在浏览器输入 `http://127.0.0.1:6060/debug/pprof/`
+
+### 查看方式
+1. 在浏览器输入 `http://127.0.0.1:6060/debug/pprof/`
+2. 命令调试：`go tool pprof http://localhost:6060/debug/pprof/profile`，然后输入 `top`
+3. 可视可工具查看`go tool pprof -http=:8000 http://localhost:6060/debug/pprof/profile?debug=1` , 要先[安装graphviz](https://graphviz.org/download/)
 
 ## 参考示例
 1. [如何排查Go程序CPU占用过高问题](https://mp.weixin.qq.com/s/Zw6mDRDXtXKlKxQeit6gPQ)
