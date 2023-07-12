@@ -16,7 +16,7 @@ tags: ["openwrt"]
 3. 开户ssh免登陆
 4. 运行以下代码
 ```
- ssh admin@10.0.0.158 "tcpdump -s 0 -U -n -i br-lan -w - 'not port 22'" | ./wireshark.exe -k -i -
+ssh admin@10.0.0.158 "tcpdump -s 0 -U -n -i br-lan -w - 'not port 22'" | ./wireshark.exe -k -i -
 ```
 
 
