@@ -41,3 +41,4 @@ func main() {
 ## 参考示例
 1. [如何排查Go程序CPU占用过高问题](https://mp.weixin.qq.com/s/Zw6mDRDXtXKlKxQeit6gPQ)
 2. [通过pprof定位groutine泄漏](https://zhuanlan.zhihu.com/p/477381377)
+3. [实用go pprof使用指南](https://zhuanlan.zhihu.com/p/396363069)
