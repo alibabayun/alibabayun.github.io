@@ -55,6 +55,11 @@ conda install -c conda-forge conda-pack
 # 离线导出环境
 conda pack -n env_name -o env_name.tar.gz --ignore-editable-packages
 
+# 离线导入环境
+cd /home/lc/anaconda3/envs
+mkdir env_name
+tar -zxvf env_name.tar.gz -C env_name
+
 ```
 ### 查看环境`cat /etc/lsb-release`
 ```
@@ -63,7 +68,11 @@ DISTRIB_RELEASE=18.04
 DISTRIB_CODENAME=bionic
 DISTRIB_DESCRIPTION="Ubuntu 18.04.6 LTS"
 ```
-[换apt-get 源](https://www.cnblogs.com/dream4567/p/9690850.html)
+
+###　初始环境
+1. [换apt-get 源](https://www.cnblogs.com/dream4567/p/9690850.html)
+2. [Ubuntu安装sshd服务](https://blog.csdn.net/mylovewanzi/article/details/105810739)
+3. [Ubuntu终端【无法使用复制粘贴】（解决办法+快捷键设置](https://blog.csdn.net/qq_41940277/article/details/122610916)
 
 ### 硬件准备
 [MAKENVIDIA英伟达Jetson TX2 NX开发板套件深度学习 AI人工智能 嵌入式边缘计算 TX2 NX基础套餐](https://ic-item.jd.com/10050838324138.html#crumb-wrap)
@@ -104,4 +113,5 @@ conda create --name yt python=3.6.15
 2. opencv安装指定版本
 ```
 pip install --upgrade opencv-python==4.1.1.26 -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install --upgrade torch==1.8.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
