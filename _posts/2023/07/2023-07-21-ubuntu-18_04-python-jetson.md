@@ -97,10 +97,16 @@ nvcc -V
 2. [Python 3.6.1安装 - 使用pyenv管理不同的Python版本](https://github.com/pyenv/pyenv)
 3. [Jetson Nano （aarch64）搭建miniconda 和mmdetection环境](https://blog.csdn.net/ckq707718837/article/details/123346043)
 4. [Github port 443 : Timed out](https://zhuanlan.zhihu.com/p/636418854)
+5. [Ubuntu上用systemctl实现随机启动](https://blog.csdn.net/Leslie_J/article/details/106806822)
+6. 查看开机启动报错
+```
+sudo journalctl -xe
+```
+7. git 接不下来
 ```
 git config --global --unset http.proxy
 ```
-5. [VMware虚拟机扩容磁盘，有很详细图文](https://blog.csdn.net/hktkfly6/article/details/123302335)
+8. [VMware虚拟机扩容磁盘，有很详细图文](https://blog.csdn.net/hktkfly6/article/details/123302335)
 
 
 ### 软件版本
