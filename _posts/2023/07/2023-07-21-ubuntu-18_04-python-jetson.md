@@ -97,7 +97,7 @@ nvcc -V
 2. [Python 3.6.1安装 - 使用pyenv管理不同的Python版本](https://github.com/pyenv/pyenv)
 3. [Jetson Nano （aarch64）搭建miniconda 和mmdetection环境](https://blog.csdn.net/ckq707718837/article/details/123346043)
 4. [Github port 443 : Timed out](https://zhuanlan.zhihu.com/p/636418854)
-5. [Ubuntu上用systemctl实现随机启动](https://blog.csdn.net/Leslie_J/article/details/106806822)
+5. [Ubuntu上用systemctl实现开机启动](https://blog.csdn.net/Leslie_J/article/details/106806822)
 6. 查看开机启动报错
 ```
 sudo journalctl -xe
@@ -121,3 +121,8 @@ conda create --name yt python=3.6.15
 pip install --upgrade opencv-python==4.1.1.26 -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip install --upgrade torch==1.8.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+
+
+
+### 其它参考资料
+1. [Jetson Nano 从入门到实战（案例：Opencv配置、人脸检测、二维码检测）](https://blog.csdn.net/qianbin3200896/article/details/103760640)

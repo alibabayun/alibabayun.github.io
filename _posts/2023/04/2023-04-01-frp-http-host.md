@@ -42,3 +42,5 @@ local_port = 80
 custom_domains = web.test.jd.com
 host_header_rewrite = 192.168.1.1
 ```
+
+最后访问：http://web.test.jd.com:7001/
