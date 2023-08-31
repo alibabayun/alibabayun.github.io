@@ -90,3 +90,7 @@ wifi up
 #https://blog.csdn.net/weixin_30906425/article/details/94849942
 /etc/init.d/firewall disable
 ```
+
+
+### 常用插件
+1. [linkease](https://doc.linkease.com/zh/guide/easepi/advanced.html#portainer-ce)
