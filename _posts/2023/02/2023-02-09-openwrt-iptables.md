@@ -12,6 +12,7 @@ tags: ["linux"]
 iptables -I INPUT 1 -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT 1 -p tcp --dport 22 -j ACCEPT
 iptables -I INPUT 1 -p tcp --dport 554 -j ACCEPT
+iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
 /etc/init.d/firewall reload
 ```
 
