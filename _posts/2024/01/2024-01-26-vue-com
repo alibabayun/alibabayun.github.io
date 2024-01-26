@@ -1,0 +1,159 @@
+---
+layout: post
+title: "vue中子组件传父组件 父传子"
+keywords: ["vue"]
+description: "vue中子组件传父组件 父传子"
+category: "vue"
+tags: ["vue"]
+---
+
+### 1. 子传父
+在 Vue 中，子组件向父组件传递数据可以通过 $emit 方法来实现。而父组件向子组件传递数据则可以使用 props 属性。
+
+以下是一个简单的示例：
+
+父组件：
+```
+<template>
+  <child-component :message="myMessage" @update-message="updateMessage"></child-component>
+</template>
+
+<script>
+import ChildComponent from './ChildComponent.vue';
+
+export default {
+  components: { ChildComponent },
+  data() {
+    return {
+      myMessage: 'Hello, world!'
+    };
+  },
+  methods: {
+    updateMessage(newMessage) {
+      this.myMessage = newMessage;
+    }
+  }
+}
+</script>
+
+```
+子组件
+```
+<template>
+  <div>
+    <p>{{ message }}</p>
+    <button @click="changeMessage">Change Message</button>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['message'],
+  methods: {
+    changeMessage() {
+      this.$emit('update-message', 'New message!');
+    }
+  }
+}
+</script>
+
+```
+
+### 2. 父传子
+#### 2.1.1 传变量
+父组件：
+```
+<template>
+  <div>
+    <child-component :message="myMessage"></child-component>
+  </div>
+</template>
+
+<script>
+import ChildComponent from './ChildComponent.vue';
+
+export default {
+  components: {
+    ChildComponent
+  },
+  data() {
+    return {
+      myMessage: 'Hello, world!'
+    };
+  }
+};
+</script>
+
+```
+子组件：
+```
+<template>
+  <div>
+    <p>{{ message }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['message']
+};
+</script>
+
+```
+在这个示例中，父组件使用 v-bind 或简写的 : 将父组件的数据 myMessage 传递给了子组件的 message 属性。子组件通过 props 定义接收该属性，并在模板中使用它进行渲染。
+
+通过这种方式，父组件可以将任何类型的数据传递给子组件，并在子组件中使用。父组件的数据更新时，子组件也会相应地更新
+
+#### 2.1.2 传方法
+如果要传递方法，可以使用与传递数据相同的方式将方法定义为父组件的方法，然后通过 props 将该方法传递给子组件。在子组件中，可以使用 $emit() 方法触发父组件中的方法。
+
+以下是一个简单的示例：
+
+父组件：
+```
+<template>
+  <div>
+    <child-component :update-message="updateMessage"></child-component>
+  </div>
+</template>
+
+<script>
+import ChildComponent from './ChildComponent.vue';
+
+export default {
+  components: {
+    ChildComponent
+  },
+  methods: {
+    updateMessage(newMessage) {
+      console.log(newMessage);
+    }
+  }
+};
+</script>
+
+```
+
+子组件：
+```
+<template>
+  <div>
+    <button @click="sendMessage">Send Message to Parent</button>
+  </div>
+</template>
+
+<script>
+export default {
+  props: ['updateMessage'],
+  methods: {
+    sendMessage() {
+      this.$emit('update-message', 'Hello, Parent!');
+    }
+  }
+};
+</script>
+
+```
+在这个示例中，父组件定义了一个名为 updateMessage 的方法，并通过 props 将其传递给了子组件。子组件中的按钮被点击时，它会触发 sendMessage 方法，该方法使用 $emit() 方法向父组件发送一个名为 update-message 的事件，并传递了新消息的值 'Hello, Parent!'。父组件中监听了该事件，当它被触发时，调用 updateMessage 方法，并将新消息的值作为参数传递给该方法。
+
+通过这种方式，子组件可以触发父组件中的方法，并向该方法传递数据。这是一种实现父子组件通信的可靠方法。
