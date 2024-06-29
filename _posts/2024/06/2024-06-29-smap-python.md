@@ -11,7 +11,7 @@ tags: ["bug"]
 ### 前言
 最近收到一个这样的需求，http://m.xxx.com/books/areward参数book_id 存在 sql注入漏洞
 ```
-http://m.zhongyi6.com/books/areward?book_id=1084/((6-4)*(2-1)-1)&amp;gift_id=1
+http://m.xxxx.com/books/areward?book_id=1084/((6-4)*(2-1)-1)&amp;gift_id=1
 ```
 
 ### 漏洞语句
