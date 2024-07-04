@@ -199,3 +199,9 @@ function escapeString($content)
 查找：\?\$_GET\['([^']+)'\]
 替换：?input('get.$1')
 ```
+
+
+### 如第二次请求需要删除缓存
+```
+rm -rf /root/.local/share/sqlmap/output/m.xxx.com
+```
