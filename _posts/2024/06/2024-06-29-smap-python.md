@@ -62,3 +62,134 @@ current database: 'book'
 [09:11:19] [CRITICAL] all tested parameters do not appear to be injectable
 [09:11:19] [WARNING] your sqlmap version is outdated
 ```
+
+
+### php修复如下
+
+```
+/***
+ * 从get或Post中获取数据
+ ***/
+function request($name, $value = '')
+{
+    $gets = $_GET;
+    $posts = $_POST;
+
+    if (strpos($name, '.') > -1) {
+        list($action, $var, $val) = explode('.', $name);
+        if ($action == 'get' || $action == 'g' || $action == "GET" || $action == 'G') {
+            if (empty($var))
+                return inputfilter($gets);
+            return inputfilter(isset($gets[$var]) ? $gets[$var] : '');
+        } elseif ($action == 'post' || $action == 'p' || $action == "POST" || $action == 'P') {
+            if (empty($var))
+                return inputfilter($posts);
+            return inputfilter(isset($posts[$var]) ? $posts[$var] : '');
+        } elseif ($action == 'server' || $action == 'ser') {
+            return $_SERVER[strtoupper($var)];
+        } elseif ($action == 'session') {
+            if (empty($val)) {
+                return $_SESSION[$var];
+            } else {
+                $_SESSION[$var] = $val;
+                return $_SESSION[$var];
+            }
+        } elseif ($action == 'cookie') {
+            if (empty($val))
+                return $_COOKIE[$var];
+            else {
+                $http_type = headerurl();
+                $m_domain = "." . getTopHost($http_type);
+                setcookie($var, $val, time() + 60 * 60 * 24 * 30, '/', $m_domain);
+                return $_COOKIE[$var];
+            }
+        }
+    } else {
+        return isset($gets[$name]) ? $gets[$name] : '';
+    }
+}
+function headerurl(){
+    $http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
+    return  $http_type . $_SERVER['HTTP_HOST'];
+}
+/**
+ * 是否是AJAx提交的
+ * @return bool
+ */
+function isAjax(){
+    if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+/**
+ * 是否是GET提交的
+ */
+function isGet(){
+    return $_SERVER['REQUEST_METHOD'] == 'GET' ? true : false;
+}
+
+/**
+ * 是否是POST提交
+ * @return int
+ */
+function isPost() {
+    return ($_SERVER['REQUEST_METHOD'] == 'POST' && (empty($_SERVER['HTTP_REFERER']) || preg_replace("~https?:\/\/([^\:\/]+).*~i", "\\1", $_SERVER['HTTP_REFERER']) == preg_replace("~([^\:]+).*~", "\\1", $_SERVER['HTTP_HOST']))) ? 1 : 0;
+}
+
+
+
+
+
+function inputfilter($content)
+{
+
+    return escapeString($content);
+}
+
+/**
+ * 防sql注入字符串转义
+ * @param $content 要转义内容
+ * @return array|string
+ */
+function escapeString($content)
+{
+    //$pattern = "/(select[\s])|(insert[\s])|(update[\s])|(delete[\s])|(from[\s])|(where[\s])|(drop[\s])/i";
+    // 防注入
+    $pattern = "/(select[\s])|(insert[\s])|(update[\s])|(delete[\s])|(from[\s])|(where[\s])|(drop[\s])|\/|\(|\)/i";
+    if (is_array($content)) {
+        foreach ($content as $key => $value) {
+
+            if (is_array($value)) {
+
+                for ($i = 0; $i < count($value); $i++) {
+                    //$content[$key][$i] = htmlencode(addslashes(trim($value[$i])));
+                    $content[$key][$i] = htmlentities(addslashes(trim($value[$i])), ENT_QUOTES, "UTF-8");
+                    if (preg_match($pattern, $content[$key][$i])) {
+                        $content[$key][$i] = '';
+                    }
+                }
+
+            } else {
+
+                //$content[$key] = htmlencode(addslashes(trim($value)));
+                $content[$key] = htmlentities(addslashes(trim($value)), ENT_QUOTES, "UTF-8");
+                if (preg_match($pattern, $content[$key])) {
+                    $content[$key] = '';
+                }
+
+            }
+
+        }
+    } else {
+        //$content = htmlencode(addslashes(trim($content)));
+        $content = htmlentities(addslashes(trim($content)), ENT_QUOTES, "UTF-8");
+        if (preg_match($pattern, $content)) {
+            $content = '';
+        }
+    }
+    return $content;
+}
+```
