@@ -193,3 +193,9 @@ function escapeString($content)
     return $content;
 }
 ```
+
+### vscode批量替换
+```
+查找：\?\$_GET\['([^']+)'\]
+替换：?input('get.$1')
+```
