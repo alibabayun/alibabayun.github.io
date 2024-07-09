@@ -67,6 +67,10 @@ current database: 'book'
 ### php修复如下
 
 ```
+function input($name, $value = ''){
+    return request($name, $value);
+
+}
 /***
  * 从get或Post中获取数据
  ***/
@@ -156,35 +160,26 @@ function inputfilter($content)
  */
 function escapeString($content)
 {
-    //$pattern = "/(select[\s])|(insert[\s])|(update[\s])|(delete[\s])|(from[\s])|(where[\s])|(drop[\s])/i";
-    // 防注入
-    $pattern = "/(select[\s])|(insert[\s])|(update[\s])|(delete[\s])|(from[\s])|(where[\s])|(drop[\s])|\/|\(|\)/i";
+    $content = urldecode($content);
+    $pattern = "/(sleep[\s])|(sysdate[\s])|(if[\s])|(select[\s])|(insert[\s])|(update[\s])|(delete[\s])|(from[\s])|(where[\s])|(drop[\s])|\/|\(|\)|#|--|;|\"|'|\\|`|!=|<|>|<=|>=|<=>|\+|-|\*|%|&|\^|\||<<|>>|\|\||\&\&|or|and|xor/i";
+
     if (is_array($content)) {
         foreach ($content as $key => $value) {
-
             if (is_array($value)) {
-
                 for ($i = 0; $i < count($value); $i++) {
-                    //$content[$key][$i] = htmlencode(addslashes(trim($value[$i])));
                     $content[$key][$i] = htmlentities(addslashes(trim($value[$i])), ENT_QUOTES, "UTF-8");
                     if (preg_match($pattern, $content[$key][$i])) {
                         $content[$key][$i] = '';
                     }
                 }
-
             } else {
-
-                //$content[$key] = htmlencode(addslashes(trim($value)));
                 $content[$key] = htmlentities(addslashes(trim($value)), ENT_QUOTES, "UTF-8");
                 if (preg_match($pattern, $content[$key])) {
                     $content[$key] = '';
                 }
-
             }
-
         }
     } else {
-        //$content = htmlencode(addslashes(trim($content)));
         $content = htmlentities(addslashes(trim($content)), ENT_QUOTES, "UTF-8");
         if (preg_match($pattern, $content)) {
             $content = '';
